@@ -7,8 +7,9 @@ package tpnote1_maxime_pilard;
 
 public abstract class Personne
 {
-String nom;
-String prenom;
+private String nom;
+private String prenom;
+
 public Personne(String nom, String prenom)
 {
 this.nom = validate(nom, 50);

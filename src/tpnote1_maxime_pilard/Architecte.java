@@ -24,7 +24,7 @@ if (telephoneValide(telephone)){
 }
 Maj_conseilRegional();
 }
-public boolean telephoneValide(String telephone){
+private boolean telephoneValide(String telephone){
 if(telephone.length() == 14 && Pattern.matches("[0-9]{2}[.][0-9]{2}[.][0-9]{2}[.][0-9]{2}[.][0-9]{2}",telephone) ){
 return true;
 }else{
@@ -75,8 +75,8 @@ this.telephone = telephone;
 // s'il est inscrit au conseil de l'ordre ou "non inscrit" dans le cas contraire
 
 public String toString () {
-String chaine = "";
-chaine = this.nom + " " + this.prenom + " " + this.conseilRegional + " ";
+String chaine = super.toString() + "";
+chaine = chaine + " " + this.conseilRegional + " ";
 if (this.inscriptionOrdre) 
     chaine = chaine + "inscrit";
 else 

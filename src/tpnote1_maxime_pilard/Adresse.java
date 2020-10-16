@@ -10,10 +10,10 @@ package tpnote1_maxime_pilard;
  * @author maxim
  */
 class Adresse {
-    String numero;
-    String voie;
-    String ville;
-    String codePostal;
+    private String numero;
+    private String voie;
+    private String ville;
+    private String codePostal;
     private String bp;
     private String lieuDit;
     private String cedex;

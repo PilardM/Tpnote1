@@ -17,8 +17,6 @@ class Deposant extends Personne {
     
 public Deposant ( String nom, String prenom, Adresse adresse) {
 super(nom,prenom);
-this.nom = nom;
-this.prenom = prenom;
 this.adresse = adresse;
 }
     
@@ -40,10 +38,6 @@ this.adresse = adresse;
     public String toString () {
 return super.toString() + " " + 
        this.civilite + " " + 
-       this.adresseMessagerie+ " " +
-       this.adresse.numero + " rue/avenue " + 
-       this.adresse.voie + ", " + 
-       this.adresse.codePostal + ", " + 
-       this.adresse.ville ;
+       this.adresseMessagerie+ " " ;
 }
 }
