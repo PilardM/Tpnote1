@@ -5,6 +5,7 @@
  */
 package tpnote1_maxime_pilard;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 class Architecte extends Personne {
@@ -12,6 +13,7 @@ class Architecte extends Personne {
     private boolean inscriptionOrdre;
     private Adresse adresse;
     private String telephone;
+    private ArrayList<Deposant> listeCl;
 public Architecte(String nom, String prenom, String conseilRegional, boolean inscriptionOrdre, Adresse adresse, String telephone){
 super(nom, prenom);
 this.conseilRegional = conseilRegional;
@@ -23,11 +25,12 @@ if (telephoneValide(telephone)){
     this.telephone = ""; 
 }
 Maj_conseilRegional();
+listeCl = new ArrayList<Deposant>();
 }
 private boolean telephoneValide(String telephone){
 if(telephone.length() == 14 && Pattern.matches("[0-9]{2}[.][0-9]{2}[.][0-9]{2}[.][0-9]{2}[.][0-9]{2}",telephone) ){
 return true;
-}else{
+}else{  
 return false;
 }
 }
@@ -81,7 +84,30 @@ if (this.inscriptionOrdre)
     chaine = chaine + "inscrit";
 else 
     chaine = chaine + "non inscrit";
-chaine = chaine + " " + this.telephone;
+chaine = chaine + " " + this.telephone; 
+if(telephoneValide(this.telephone) == false)
+    System.out.print("ATTENTION : Numéro Invalide !\n");  ;
 return chaine;
 }
+
+ public void addCl(Deposant deposant) {
+     this.listeCl.add(deposant);
+ }
+ 
+  public ArrayList<Deposant> getListeCl() {
+	  return this.listeCl;
+  }
+  
+public void printListeCl() {
+System.out.print("Liste Client de l'architecte : \n");
+    if(this.listeCl.isEmpty() ){
+        System.out.print("Aucun Client ajouté\n");
+    }else{
+        for(int i=0; i<this.listeCl.size();i++) 
+            System.out.print("Client n°"+ i + " : " + this.listeCl.get(i).getnomprenom()+ "\n");    
+    }
+  System.out.print("\n\n");
+  }
+
+
 }

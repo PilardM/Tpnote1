@@ -27,11 +27,15 @@ System.out.print("Architecte 1 : \n");
 System.out.print(architecte1.toString()+"\n");
 System.out.print("Adresse de l'architecte 1 : ");
 System.out.print(architecte1.getAdress().getAdress()+"\n"+"\n");
+architecte1.addCl(deposant1);
+architecte1.addCl(deposant2);
+architecte1.printListeCl();
 
 System.out.print("Architecte 2 : \n");
 System.out.print(architecte2.toString()+"\n");
 System.out.print("Adresse de l'architecte 2 : ");
 System.out.print(architecte2.getAdress().getAdress()+"\n"+"\n");
+architecte2.printListeCl();
 
 deposant1.setCivilite("Homme");
 deposant2.setCivilite("Homme");
