@@ -28,11 +28,22 @@ this.adresseMessagerie = adresseMessagerie;
 public void setCivilite(String civilite) {
 this.civilite = civilite;
 }
-    
+
+public Adresse getAdress() {
+return this.adresse;
+}
+  
+public void setAdresse(Adresse adresse) {
+this.adresse = adresse;
+}
+
     public String toString () {
 return super.toString() + " " + 
        this.civilite + " " + 
-       this.adresseMessagerie + " " + 
-       this.adresse;
+       this.adresseMessagerie+ " " +
+       this.adresse.numero + " rue/avenue " + 
+       this.adresse.voie + ", " + 
+       this.adresse.codePostal + ", " + 
+       this.adresse.ville ;
 }
 }
